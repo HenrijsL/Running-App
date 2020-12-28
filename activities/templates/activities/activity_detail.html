@@ -1,0 +1,13 @@
+{% extends 'activities/layout.html' %}
+{% load render_table from django_tables2 %}
+
+{% block content %}
+    <h1>{{ object.title }}</h1>
+
+    <a class="btn btn-outline-secondary btn-sm" href="{% url 'update' object.id %}">Edit Activity</a>
+    <a class="btn btn-outline-secondary btn-sm" href="{% url 'interval-create' object.id %}">Add Interval</a>
+    <a class="btn btn-outline-danger btn-sm" href="{% url 'delete' object.id %}">Delete</a>
+
+    {% render_table table %}
+
+{% endblock %}

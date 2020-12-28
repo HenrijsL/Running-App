@@ -1,0 +1,9 @@
+{% extends 'activities/layout.html' %}
+
+{% block content %}
+    <form method="post">{% csrf_token %}
+        <p>Are you sure you want to delete?</p>
+        <button class="btn btn-outline-danger" type="submit">Delete</button>
+        <a class="btn btn-outline-secondary" href="{% url 'activity' object.id %}">Cancel</a>
+    </form>
+{% endblock %}

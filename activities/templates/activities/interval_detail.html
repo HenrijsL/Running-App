@@ -1,0 +1,14 @@
+{% extends 'activities/layout.html' %}
+
+{% block content %}
+    <h1>{{ object.activity }} - {{ object.type }}</h1>
+    <ul>
+        <li>Distance: {{ object.distance }} km</li>
+        <li>Duration: {{ object.duration }}</li>
+        <li>Pace: {{ object.pace }}</li>
+        <li>HeartRate: {{ object.heartrate }}</li>
+        <li>Elevation: {{ object.elevation }}</li>
+    </ul>
+    <a class="btn btn-outline-secondary btn-sm" href="{% url 'interval-update' object.id %}">Edit Interval</a>
+    <a class="btn btn-outline-danger btn-sm" href="{% url 'interval-delete' object.id %}">Delete</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'activities/layout.html' %}
+{% load render_table from django_tables2 %}
+
+{% block content %}
+    <h1>Intervāli</h1>
+    <form action="" method="get">
+        {{ filter.form }}
+        <input class="btn btn-primary btn-sm mt-1 mb-1" type="submit" />
+    </form>
+    {% render_table table %}
+{% endblock %}
